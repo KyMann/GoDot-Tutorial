@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dww0wb5g3qwy5"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_c0x6i"]
+[ext_resource type="PackedScene" uid="uid://ce6id0rh40lk6" path="res://Scenes/background_1.tscn" id="2_ho422"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_c0x6i")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 74.0
+offset_right = 839.0
+offset_bottom = 437.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 479.0
+offset_right = 839.0
+offset_bottom = 595.0
+tooltip_text = "Don't Go!
+"
+text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_ho422")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
